@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Status Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Website Title -->
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Loan Status Predictor</span></h2>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicts loan approval status, Built with Flask and Deployed using Heroku.</p><br>
+      <p>(Note: This Application is 70% accurate)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict') }}" method="POST">
+      <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="text" id="Age" name="Age" placeholder="Enter Your Age">
+      </div>
+      <div class="form-group">
+        <label for="Income">Income</label>
+        <input type="text" id="Income" name="Income" placeholder="Enter monthly income before taxes and deductions">
+      </div>
+      <div class="form-group">
+        <label for="LoanAmount">Loan Amount</label>
+        <input type="text" id="LoanAmount" name="LoanAmount" placeholder="Enter the amount requested for the loan">
+      </div>
+      <div class="form-group">
+        <label for="CreditScore">Credit Score</label>
+        <input type="text" id="CreditScore" name="CreditScore" placeholder="Enter Your Cibil Score">
+      </div>
+
+      <div class="form-group">
+        <label for="NumCreditLines">Number of Credit Lines</label>
+        <input type="text" id="NumCreditLines" name="NumCreditLines" placeholder="Enter the Total count of active credit accounts">
+      </div>
+      <div class="form-group">
+        <label for="DTIRatio">DTI Ratio</label>
+        <input type="text" id="DTIRatio" name="DTIRatio" placeholder="Enter the Debt to Income Ratio">
+      </div>
+      <div class="form-group">
+        <label for="Education">Education</label>
+        <select id="Education" name="Education">
+          <option selected>----select option----</option>
+          <option value="1">High School</option>
+          <option value="2">Bachelor's</option>
+          <option value="3">Master's</option>
+          <option value="4">PhD</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="EmploymentType">Employment Type</label>
+        <select id="EmploymentType" name="EmploymentType">
+          <option selected>----select option----</option>
+          <option value="1">Part-time</option>
+          <option value="2">Unemployed</option>
+          <option value="3">Self-employed</option>
+          <option value="4">Full-time</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="MaritalStatus">Marital Status</label>
+        <select id="MaritalStatus" name="MaritalStatus">
+          <option selected>----select option----</option>
+          <option value="1">Married</option>
+          <option value="2">Divorced</option>
+          <option value="3">Single</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="HasMortgage">Has Mortgage</label>
+        <select id="HasMortgage" name="HasMortgage">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="HasDependents">Has Dependents</label>
+        <select id="HasDependents" name="HasDependents">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="LoanPurpose">Loan Purpose</label>
+        <select id="LoanPurpose" name="LoanPurpose">
+          <option selected>----select option----</option>
+          <option value="1">Business</option>
+          <option value="2">Home</option>
+          <option value="3">Education</option>
+          <option value="4">Other</option>
+          <option value="5">Auto</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="HasCoSigner">Has Co-Signer</label>
+        <select id="HasCoSigner" name="HasCoSigner">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://github.com"><i class="fab fa-github fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Saravana Ganesh.</p>
+  </div>
+</body>
+</html>
